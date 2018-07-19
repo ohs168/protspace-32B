@@ -27,7 +27,8 @@ class PrototypesController < ApplicationController
 
   def update
     if @prototype.user_id == current_user.id
-    @prototype.update(prototype_params)
+      @prototype.update(prototype_params)
+    end
   end
 
   private
