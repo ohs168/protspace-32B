@@ -124,6 +124,11 @@ body {
   }
 }
 
+.btn-edit {
+  margin: 0 10px 2px;
+  transition: all .15s ease-in-out;
+}
+
 
 /*-- Button groups --------------------------------- */
 .btn-group .btn {
@@ -259,6 +264,9 @@ body {
 
   .navbar-brand {
     padding: 8px 0 0;
+  }
+  .navbar-inverse {
+    background-color: #222;
   }
 
   .btn a {
