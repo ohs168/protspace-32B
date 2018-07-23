@@ -17,7 +17,7 @@
     = render partial: 'prototypes/prototype', collection: @prototypes
 
 .text-center
-  %ul.pagination
+  %ul.pagination = paginate @prototypes
     %li.disabled
       %a{"aria-label": "Previous", href: "#"}
         %span{"aria-hidden": "true"} «
