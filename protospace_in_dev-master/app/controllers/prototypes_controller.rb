@@ -15,11 +15,16 @@ class PrototypesController < ApplicationController
     if @prototype.save
       redirect_to :root, notice: 'New prototype was successfully created'
     else
-      redirect_to action: 'new' , alert: 'YNew prototype was unsuccessfully created'
-     end
+      redirect_to ({ action: new }), alert: 'YNew prototype was unsuccessfully created'
+    end
   end
 
   def show
+  end
+
+  def destroy
+    prototype = Prototype.find(params[:id])
+    prototype.destroy if prototype.user_id == current_user.id
   end
 
   private
@@ -35,6 +40,6 @@ class PrototypesController < ApplicationController
       :concept,
       :user_id,
       captured_images_attributes: [:content, :status]
-    )
+      )
   end
 end
