@@ -408,6 +408,7 @@ body {
     }
   }
 
+
   .proto-new-title {
     line-height: 60px;
     font-size: 24px;
@@ -472,6 +473,11 @@ body {
     margin: auto;
   }
 }
+
+.proto-edit {
+  @extend .proto-new;
+}
+
 
 .user-new {
   padding-top: 20px;
