@@ -1,3 +1,3 @@
 $(function(){
-  $('#tag-it').tagit({placeholderText:"タグは３つまで！",fieldName:"tags[]"});
+  $('#tag-it').tagit({placeholderText:"タグは３つまで！",fieldName:"tag_list",singleField: true});
 });
