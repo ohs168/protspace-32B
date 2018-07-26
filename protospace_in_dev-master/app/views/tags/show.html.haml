@@ -1,0 +1,8 @@
+.row
+  .col-md-12
+    .tag__info
+      .tag__info__name
+        = @tag.name
+    .container.proto-list
+      .row
+        = render partial: 'prototypes/prototype', collection: @prototypes
