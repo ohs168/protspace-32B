@@ -12,6 +12,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20180725013727) do
+ActiveRecord::Schema.define(version: 20180724002016) do
 
   create_table "captured_images", force: :cascade do |t|
     t.string  "content",      limit: 255
@@ -30,6 +31,14 @@ ActiveRecord::Schema.define(version: 20180725013727) do
 
   add_index "likes", ["prototype_id"], name: "fk_rails_8847d87628", using: :btree
   add_index "likes", ["user_id"], name: "fk_rails_1e09b5dabf", using: :btree
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "user_id",      limit: 4
+    t.integer  "prototype_id", limit: 4
+    t.text     "text",         limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "prototypes", force: :cascade do |t|
     t.string   "title",      limit: 255
