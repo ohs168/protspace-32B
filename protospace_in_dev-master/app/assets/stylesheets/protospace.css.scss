@@ -131,8 +131,17 @@ body {
   transition: all .15s ease-in-out;
 }
 
-.btn-like {
-  display: inline-block;
+.media{
+  width: 757px;
+}
+
+button.btn-like {
+  display: flex;
+  height: 40px;
+  width: 70px;
+  padding:0;
+  padding-left: 15px;
+  box-sizing: border-box;
 }
 
 .btn-like-icon {
@@ -140,7 +149,18 @@ body {
   width: 30px;
   display: inline-block;
 }
-.like-sum
+
+.like-link {
+  height: 40px;
+  width: 70px;
+  float: right;
+}
+
+.button_to {
+  height: 40px;
+  width: 70px;
+  margin-right: 0;
+}
 
 /*-- Button groups --------------------------------- */
 .btn-group .btn {
@@ -347,7 +367,6 @@ body {
     }
 
     button {
-      padding-right: 35px;
 
       img {
         max-width: 18px;

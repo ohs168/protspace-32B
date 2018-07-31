@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 20180724002016) do
 
   add_index "captured_images", ["prototype_id"], name: "index_captured_images_on_prototype_id", using: :btree
 
+  create_table "comments", force: :cascade do |t|
+    t.integer  "user_id",      limit: 4
+    t.integer  "prototype_id", limit: 4
+    t.text     "text",         limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "likes", force: :cascade do |t|
     t.integer  "prototype_id", limit: 4
     t.integer  "user_id",      limit: 4
