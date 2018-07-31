@@ -8,8 +8,6 @@
         .media-body
           %h4#top-aligned-media.media-heading
             = @prototype.title
-            - if user_signed_in? && current_user.id == @prototype.user_id
-              = link_to "delete","/prototypes/#{@prototype.id}", method: :delete ,class: "btn btn-xs navbar-inverse btn-edit"
           .proto-user
             by
             = link_to "#{@prototype.user.name}", user_path(@prototype.user)
@@ -39,3 +37,12 @@
           %a{href: "#", class: "btn btn-default"} iPad
         %li
           %a{href: "#", class: "btn btn-default"} wireframe
+  .row.proto-comments
+    %h4.col-md-12
+      Comments
+      %span.num
+        = "( #{ @comments.count } )"
+    #comment-area.col-md-12
+      = render partial: "comments/comment", collection: @comments
+    #comment-area.col-md-12
+      = render partial: "comments/form"
