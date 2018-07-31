@@ -53,6 +53,6 @@ class PrototypeImageUploader < CarrierWave::Uploader::Base
   # end
 
   def default_url
-    '/uploads/noimage.png'
+    '/uploads/defaultimage.png'
   end
 end
