@@ -34,5 +34,5 @@
       %h4 Tag List
       %ul.proto-tag-list.list-inline
         - @prototype.tags.each do |tag|
-          %li
+          %li.tag-list
             = link_to "#{tag.name}", tag_url(id: tag.id), method: :get, class: "btn btn-default"
