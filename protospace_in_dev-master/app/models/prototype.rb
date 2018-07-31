@@ -21,7 +21,8 @@ class Prototype < ActiveRecord::Base
   def posted_date
     created_at.strftime('%b %d %a')
   end
-  def user_like(user_id)
-    likes.find_by(user_id)
+
+  def like_user(user_id)
+    likes.find_by(user_id: user_id)
   end
 end
