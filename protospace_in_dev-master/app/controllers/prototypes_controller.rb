@@ -20,9 +20,12 @@ class PrototypesController < ApplicationController
   end
 
   def show
-   @comment = Comment.new
-   @comments = @prototype.comments.includes(:user)
-   @prototype = Prototype.find(params[:id])
+    @prototype = Prototype.find(params[:id])
+    @likes = @prototype.likes.where(prototype_id: params[:id])
+    @likes_count = @prototype.likes.where(prototype_id: params[:id]).count
+    @comment = Comment.new
+    @comments = @prototype.comments.includes(:user)
+    @prototype = Prototype.find(params[:id])
   end
 
   def destroy

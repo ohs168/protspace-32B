@@ -10,6 +10,11 @@
             = @prototype.title
             - if user_signed_in? && current_user.id == @prototype.user_id
               = link_to "delete","/prototypes/#{@prototype.id}", method: :delete ,class: "btn btn-xs navbar-inverse btn-edit"
+            %div.like-link{id: "like-of-#{@prototype.id}"}
+              = render partial: 'likes/like', locals: { prototype: @prototype, likes: @likes }
+
+
+
           .proto-user
             by
             = link_to "#{@prototype.user.name}", user_path(@prototype.user)
