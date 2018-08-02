@@ -1,7 +1,7 @@
 class LikesController < ApplicationController
   before_action :set_variables
   def create
-    @like = Like.create(user_id: current_user.id, prototype_id: params[:prototype_id])
+    Like.create(user_id: current_user.id, prototype_id: params[:prototype_id])
     @likes = Like.where(prototype_id: params[:prototype_id])
     @prototypes = Prototype.all
     @likes_count = @likes.count
